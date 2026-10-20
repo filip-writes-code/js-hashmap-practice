@@ -49,3 +49,14 @@ it("remove(key) returns false when the key does not exist", () => {
   testHashMap.set("chevy", "bolt");
   expect(testHashMap.remove("ford")).toBe(false);
 });
+
+test("length() returns the correct number", () => {
+  testHashMap.set("chevy", "bolt");
+  testHashMap.set("ford", "taurus");
+  expect(testHashMap.length()).toBe(2);
+});
+
+test("length() returns the correct number", () => {
+  testHashMap.set("chevy", "bolt");
+  expect(testHashMap.length()).toBe(1);
+});
