@@ -95,6 +95,16 @@ class HashMap {
     });
     return keysArray;
   }
+  // values() returns an array containing all the values (not keys) inside the hash map.
+  values() {
+    let valuesArray = [];
+    this.buckets.forEach((bucket) => {
+      bucket.forEach((keyPair) => {
+        valuesArray.push(keyPair[1]);
+      });
+    });
+    return valuesArray;
+  }
 }
 
 module.exports = HashMap;

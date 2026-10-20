@@ -84,8 +84,14 @@ test("clear() clears", () => {
   ]);
 });
 
-test("clear() clears", () => {
+test("keys() works", () => {
   testHashMap.set("chevy", "bolt");
   testHashMap.set("ford", "taurus");
   expect(testHashMap.keys()).toEqual(["chevy", "ford"]);
+});
+
+test("values() works", () => {
+  testHashMap.set("chevy", "bolt");
+  testHashMap.set("ford", "taurus");
+  expect(testHashMap.values()).toEqual(["bolt", "taurus"]);
 });
