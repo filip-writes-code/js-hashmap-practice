@@ -32,6 +32,16 @@ class HashMap {
       bucket.push([key, value]);
     }
   }
+
+  // Takes a key as an argument and returns the value that is associated with it.
+  // If the key is not found, return undefined.
+  get(key) {
+    let index = this.hash(key);
+    let bucket = this.buckets[index];
+
+    let entry = bucket.find(([k]) => k === key);
+    return entry;
+  }
 }
 
 module.exports = HashMap;

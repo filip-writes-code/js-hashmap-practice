@@ -27,3 +27,9 @@ it("overwrittes existing keys", () => {
   testHashMap.set("chevy", "bolt 2027");
   expect(testHashMap.buckets[3][0]).toEqual(["chevy", "bolt 2027"]);
 });
+
+it("gets keys", () => {
+  testHashMap.set("chevy", "bolt");
+  expect(testHashMap.get("chevy")).toEqual(["chevy", "bolt"]);
+  expect(testHashMap.get("ford")).toEqual(undefined);
+});
