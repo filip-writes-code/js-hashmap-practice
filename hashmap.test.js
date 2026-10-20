@@ -95,3 +95,12 @@ test("values() works", () => {
   testHashMap.set("ford", "taurus");
   expect(testHashMap.values()).toEqual(["bolt", "taurus"]);
 });
+
+test("entries() works", () => {
+  testHashMap.set("chevy", "bolt");
+  testHashMap.set("ford", "taurus");
+  expect(testHashMap.entries()).toEqual([
+    ["chevy", "bolt"],
+    ["ford", "taurus"],
+  ]);
+});

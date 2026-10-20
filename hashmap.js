@@ -105,6 +105,18 @@ class HashMap {
     });
     return valuesArray;
   }
+
+  // entries() returns an array that contains each key-value pair in their own arrays, for example:
+  // [[firstKey, firstValue], [secondKey, secondValue]].
+  entries() {
+    let entriesArray = [];
+    this.buckets.forEach((bucket) => {
+      bucket.forEach((keyPair) => {
+        entriesArray.push(keyPair);
+      });
+    });
+    return entriesArray;
+  }
 }
 
 module.exports = HashMap;
