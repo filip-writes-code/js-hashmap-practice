@@ -84,6 +84,17 @@ class HashMap {
   clear() {
     this.buckets = new Array(this.capacity).fill(null).map(() => []);
   }
+
+  // keys() returns an array containing all the keys (not values) inside the hash map.
+  keys() {
+    let keysArray = [];
+    this.buckets.forEach((bucket) => {
+      bucket.forEach((keyPair) => {
+        keysArray.push(keyPair[0]);
+      });
+    });
+    return keysArray;
+  }
 }
 
 module.exports = HashMap;

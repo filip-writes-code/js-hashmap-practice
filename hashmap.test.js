@@ -83,3 +83,9 @@ test("clear() clears", () => {
     [],
   ]);
 });
+
+test("clear() clears", () => {
+  testHashMap.set("chevy", "bolt");
+  testHashMap.set("ford", "taurus");
+  expect(testHashMap.keys()).toEqual(["chevy", "ford"]);
+});
