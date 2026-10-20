@@ -53,6 +53,23 @@ class HashMap {
     });
     return doesExist ? true : false;
   }
+
+  // remove(key) takes a key as an argument.
+  // If the given key is in the hash map, it should remove the entry with that key then return true.
+  // If the key isn’t in the hash map, it should return false.
+  remove(key) {
+    let index = this.hash(key);
+    let bucket = this.buckets[index];
+
+    let bucketIndex = bucket.findIndex((element) => element[0] === key);
+
+    if (bucketIndex >= 0) {
+      bucket.splice(bucketIndex, 1);
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
 
 module.exports = HashMap;

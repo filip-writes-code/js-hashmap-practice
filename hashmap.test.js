@@ -39,3 +39,13 @@ it("check if keys are present", () => {
   expect(testHashMap.has("chevy")).toBe(true);
   expect(testHashMap.has("ford")).toBe(false);
 });
+
+it("removes keys", () => {
+  testHashMap.set("chevy", "bolt");
+  expect(testHashMap.remove("chevy")).toBe(true);
+});
+
+it("remove(key) returns false when the key does not exist", () => {
+  testHashMap.set("chevy", "bolt");
+  expect(testHashMap.remove("ford")).toBe(false);
+});
