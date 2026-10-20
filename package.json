@@ -1,0 +1,23 @@
+{
+  "name": "js-hashmap-practice",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/filip-writes-code/js-hashmap-practice#readme",
+  "bugs": {
+    "url": "https://github.com/filip-writes-code/js-hashmap-practice/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filip-writes-code/js-hashmap-practice.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "hashmap.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^30.5.2"
+  }
+}
