@@ -60,3 +60,26 @@ test("length() returns the correct number", () => {
   testHashMap.set("chevy", "bolt");
   expect(testHashMap.length()).toBe(1);
 });
+
+test("clear() clears", () => {
+  testHashMap.set("chevy", "bolt");
+  testHashMap.clear();
+  expect(testHashMap.buckets).toEqual([
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+  ]);
+});

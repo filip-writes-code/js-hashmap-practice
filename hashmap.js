@@ -79,6 +79,11 @@ class HashMap {
     });
     return totalNumber;
   }
+
+  // clear() removes all entries in the hash map.
+  clear() {
+    this.buckets = new Array(this.capacity).fill(null).map(() => []);
+  }
 }
 
 module.exports = HashMap;
