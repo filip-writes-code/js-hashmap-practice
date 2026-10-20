@@ -33,3 +33,9 @@ it("gets keys", () => {
   expect(testHashMap.get("chevy")).toEqual(["chevy", "bolt"]);
   expect(testHashMap.get("ford")).toEqual(undefined);
 });
+
+it("check if keys are present", () => {
+  testHashMap.set("chevy", "bolt");
+  expect(testHashMap.has("chevy")).toBe(true);
+  expect(testHashMap.has("ford")).toBe(false);
+});

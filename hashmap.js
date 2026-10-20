@@ -42,6 +42,17 @@ class HashMap {
     let entry = bucket.find(([k]) => k === key);
     return entry;
   }
+
+  has(key) {
+    // takes a key as an argument and returns a boolean based on whether or not the key is in the hash map.
+    let index = this.hash(key);
+    let bucket = this.buckets[index];
+
+    const doesExist = bucket.some((element) => {
+      return element[0] === key;
+    });
+    return doesExist ? true : false;
+  }
 }
 
 module.exports = HashMap;
