@@ -31,6 +31,8 @@ class HashMap {
       //if not add it to the bucket
       bucket.push([key, value]);
     }
+    //check if the the load factor is ok, and if not grow the capacity
+    if (!this.loadFactorOK()) this.grow();
   }
 
   // Takes a key as an argument and returns the value that is associated with it.
@@ -116,6 +118,24 @@ class HashMap {
       });
     });
     return entriesArray;
+  }
+  // grow() should be used once the hashmap hits the load factor.
+  // it doubles the capacity of the HashMap.
+  grow() {
+    //get all the entries
+    let allEntries = this.entries();
+    //double the capacity and start new buckets
+    this.capacity *= 2;
+    this.buckets = new Array(this.capacity).fill(null).map(() => []);
+
+    //rehash and set all the keys to newBuckets
+    allEntries.forEach(([key, value]) => {
+      this.set(key, value);
+    });
+  }
+
+  loadFactorOK() {
+    return this.capacity * this.loadFactor >= this.length() ? true : false;
   }
 }
 

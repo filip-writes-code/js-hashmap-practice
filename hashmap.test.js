@@ -104,3 +104,38 @@ test("entries() works", () => {
     ["ford", "taurus"],
   ]);
 });
+
+test("grow() works", () => {
+  testHashMap.set("chevy", "bolt");
+  testHashMap.set("ford", "taurus");
+  testHashMap.grow();
+  expect(testHashMap.capacity).toBe(32);
+  expect(testHashMap.entries()).toEqual([
+    ["chevy", "bolt"],
+    ["ford", "taurus"],
+  ]);
+});
+
+test("loadFactorOK()", () => {
+  expect(testHashMap.capacity).toBe(16);
+  expect(testHashMap.loadFactor).toBe(0.75);
+  expect(testHashMap.loadFactorOK()).toBe(true);
+});
+
+test("the hashmap grows!", () => {
+  testHashMap.set("apple", "red");
+  testHashMap.set("banana", "yellow");
+  testHashMap.set("carrot", "orange");
+  testHashMap.set("dog", "brown");
+  testHashMap.set("elephant", "gray");
+  testHashMap.set("frog", "green");
+  testHashMap.set("grape", "purple");
+  testHashMap.set("hat", "black");
+  testHashMap.set("ice cream", "white");
+  testHashMap.set("jacket", "blue");
+  testHashMap.set("kite", "pink");
+  testHashMap.set("lion", "golden");
+  expect(testHashMap.capacity).toBe(16);
+  testHashMap.set("chevy", "bolt");
+  expect(testHashMap.capacity).toBe(32);
+});
